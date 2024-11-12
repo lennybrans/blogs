@@ -1,169 +1,157 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async="" 
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <title>Mastering Working Capital - Weighted Average Cost of Capital</title>
-</head>
-<body>
-  <article>
-    <section id="introduction">
-      <p>
-        Welcome to our third and final article in the Mastering Working Capital 
-        series! In this installment, we'll dive into the Weighted Average Cost 
-        of Capital, or WACC. 
-      </p>
-      <p>
-        WACC is a powerful metric for evaluating investments, giving insights 
-        into whether new projects will meet the minimum return required by both 
-        equity and debt stakeholders. This metric reflects the full scope of a 
-        company's capital structure by considering loans, shareholders' equity, 
-        required returns, and corporate tax deductions. While best known for 
-        investment analysis, WACC is versatile—it can also inform decisions in 
-        areas like expansion, R&D, and long-term funding strategies.
-      </p>
-      <blockquote>
-        <p>
-          A firm's weighted average cost of capital has important applications 
-          other than the discount rate in capital project evaluations. For 
-          instance, it is a key ingredient to measure a firm's true economic 
-          profit, or what I like to call EVA, standing for economic value added. 
-          [...] Starting in the early 1990s, firms around the world—ranging from 
-          Coca-Cola, to Briggs & Stratton, Herman Miller, and Eli Lilly in 
-          America, Siemens in Germany, Tata Consulting and the Godrej Group out 
-          of India, Brahma Beer in Brazil, and many, many more—began to turn to 
-          EVA as a new and better way to measure performance and set goals, 
-          make decisions and determine bonuses, and to communicate with 
-          investors and to teach business and finance basics to managers and 
-          employees. Properly tailored and implemented, EVA is a natural way to 
-          bring the cost of capital to life and to turn everyone in a company 
-          into a capital conscientious, owner-entrepreneur.
-        </p>
-        <p>
-          <strong>&mdash;
-            <cite>Bennet Stewart on Economic Value Added.</cite>
-          </strong>
-        </p>
-      </blockquote>
-    </section>
-    <section id="wacc-formula">
-      <h3>Inside the WACC Formula: Key Components Explained</h3>
-      <p>
-        The weighted average cost of capital (WACC) represents the minimum 
-        return rate a company needs to achieve on its invested capital to meet 
-        the expectations of its investors and cover its overall financing costs. 
-        WACC serves as a benchmark, guiding decision-makers in assessing the 
-        profitability of both current activities and potential future investments.
-      </p>
-      <p>
-        However, it's crucial to remember that WACC isn't a 'one-size-fits-all' 
-        metric; each use case requires a distinct calculation based on 
-        specific circumstances, such as industry factors, capital structure, 
-        and project-specific risks. Let's start by examining the individual 
-        components of the WACC formula.
-      </p>
-      <div class="latex" style="overflow:auto; max-width: 100%;">
-        $$\text{WACC}=(\frac {E}{V}) * R_{E} + (\frac {D}{V}) * R_{D} * 
-        (1 - T_{C})$$
-      </div>
-      <p>
-        <em>With:</em>
-      </p>
-      <ul>
-        <li><sup>E</sup>&frasl;<sub>V</sub> = the 
-          <span class="tooltip">capital structure weight
-            <span class="tooltip-text">
-              The proportion of financing type used by a company, commonly 
-              split in equity and debt.
-            </span>
-          </span> 
-          of equity.
-        </li>
-        <li><sup>D</sup>&frasl;<sub>V</sub> = the capital structure weight of 
-            debt.
-        </li>
-        <li>V = market value</li>
-        <li>R<sub>E</sub> = Cost of equity</li>
-        <li>R<sub>D</sub> = Cost of debt</li>
-        <li>T<sub>C</sub> = Corporate tax rate</li>
-      </ul>
-      <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-      <h4>Rules:</h4>
-      <ul>
-        <li>
-          Use the market value, not the accounting value. Market values provide 
-          a more accurate snapshot of the current costs of capital than 
-          historical, book-based accounting value
-        </li>
-        <li>
-          Ensure each component represents funds currently used in operationsor 
-          earmarked for future investments, reflecting the actual sources of 
-          capital in the company's financing structure
-        </li>
-        <li>
-          Always calculate the debt factor
-            <span class="tooltip">after-tax
-              <span class="tooltip-text">
-                <p>
-                  Just like mortgage interest, corporate loan interest is tax 
-                  deductable.
-                </p>
-                <p>
-                  For example, if a loan's interest rate is 8%, the after-tax 
-                  cost is calculated as 8% * (1 - T<sub>C</sub>), where 
-                  T<sub>C</sub> is the corporate tax rate.
-                </p>
-                <strong>Example Calculation:</strong>
-                <p>Interest rate = 8%
-                  <br>Corporate Tax Rate is 25%
-                  <br>E.g. 8% * (1 - 25%) = <strong>6%</strong>.
-                </p>
-              </span>
-            </span>.
-        </li>
-      </ul>
-      <p>
-        A simple example: if the WACC for an investment is, say 6%. Then that 
-        serves as the required return rate to maintain the company's value 
-        relative to its capital costs. If we plan to invest €1,000, then the 
-        cost of capital will be €60, calculated as follows: 1,000 * (1 + 0.06) 
-        = 1,060.
-      </p>
-      <p>
-        <em>Note: In this article, we'll simplify calculations 
-        to focus on when and how to use WACC. In practice, calculating WACC 
-        is more complex, often requiring financial experts who analyse 
-        various funding sources and their associated costs. We'll 
-        illustrate these principles with a fictional, publicly traded 
-        company, AB Bieren N.V.</em>
-      </p>
-    </section>
-    <section id="influences">
-      <h3>Know the Influences Impacting WACC</h3>
-      <p>
-        AB Bieren N.V. plans to open a new production line in Belgium to expand 
-        its capacity, with an estimated investment of 
-        <span id="investmentText">5 M</span>. Understanding the composition of 
-        its capital structure allows us to calculate a tailored WACC, factoring 
-        in both equity and debt costs.
-      </p>
-      <p>
-        For this project, AB Bieren N.V. plans to fund 
-        <span id="ev_weight">50</span>% (<span id="stockAmount">2.5 M</span>)
-        through issuing new stock and the remaining
-        <span id="dv_weight">50</span>%(<span id="loanAmount">2.5 M</span>) 
-        via a bank loan. New shareholders are promised a
-        <span id="costEq">15</span>% return, reflecting the higher risk 
-        typically associated with equity. On the debt side, the bank, which 
-        requires lower returns on secured loans, will charge a 
-        <span id="costDebt">4.5</span>%interest rate. The current Belgian 
-        corporate tax rate is 25%, which will affect the after-tax cost of debt 
-        in our WACC calculation.
-      </p>
-      <div class="wrapper">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async="" 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<article>
+  <section id="introduction">
+    <p>
+      Welcome to our third and final article in the Mastering Working Capital 
+      series! In this installment, we'll dive into the Weighted Average Cost 
+      of Capital, or WACC. 
+    </p>
+    <p>
+      WACC is a powerful metric for evaluating investments, giving insights 
+      into whether new projects will meet the minimum return required by both 
+      equity and debt stakeholders. This metric reflects the full scope of a 
+      company's capital structure by considering loans, shareholders' equity, 
+      required returns, and corporate tax deductions. While best known for 
+      investment analysis, WACC is versatile—it can also inform decisions in 
+      areas like expansion, R&D, and long-term funding strategies.
+    </p>
+    <blockquote>
+      A firm's weighted average cost of capital has important applications 
+      other than the discount rate in capital project evaluations. For 
+      instance, it is a key ingredient to measure a firm's true economic 
+      profit, or what I like to call EVA, standing for economic value added. 
+      [...] Starting in the early 1990s, firms around the world—ranging from 
+      Coca-Cola, to Briggs & Stratton, Herman Miller, and Eli Lilly in 
+      America, Siemens in Germany, Tata Consulting and the Godrej Group out 
+      of India, Brahma Beer in Brazil, and many, many more—began to turn to 
+      EVA as a new and better way to measure performance and set goals, 
+      make decisions and determine bonuses, and to communicate with 
+      investors and to teach business and finance basics to managers and 
+      employees. Properly tailored and implemented, EVA is a natural way to 
+      bring the cost of capital to life and to turn everyone in a company 
+      into a capital conscientious, owner-entrepreneur.
+      <cite>
+        <strong>&mdash;Bennet Stewart on Economic Value Added.</strong>
+      </cite>
+    </blockquote>
+  </section>
+  <section id="wacc-formula">
+    <h3>Inside the WACC Formula: Key Components Explained</h3>
+    <p>
+      The weighted average cost of capital (WACC) represents the minimum 
+      return rate a company needs to achieve on its invested capital to meet 
+      the expectations of its investors and cover its overall financing costs. 
+      WACC serves as a benchmark, guiding decision-makers in assessing the 
+      profitability of both current activities and potential future investments.
+    </p>
+    <p>
+      However, it's crucial to remember that WACC isn't a 'one-size-fits-all' 
+      metric; each use case requires a distinct calculation based on 
+      specific circumstances, such as industry factors, capital structure, 
+      and project-specific risks. Let's start by examining the individual 
+      components of the WACC formula.
+    </p>
+    <div class="latex">
+      $$\text{WACC}=(\frac {E}{V}) * R_{E} + (\frac {D}{V}) * R_{D} * 
+      (1 - T_{C})$$
+    </div>
+    <p>
+      <em>With:</em>
+    </p>
+    <ul>
+      <li><sup>E</sup>&frasl;<sub>V</sub> = the 
+        <span class="tooltip">capital structure weight
+          <span class="tooltip-text">
+            The proportion of financing type used by a company, commonly 
+            split in equity and debt.
+          </span>
+        </span> 
+        of equity.
+      </li>
+      <li><sup>D</sup>&frasl;<sub>V</sub> = the capital structure weight of 
+          debt.
+      </li>
+      <li>V = market value</li>
+      <li>R<sub>E</sub> = Cost of equity</li>
+      <li>R<sub>D</sub> = Cost of debt</li>
+      <li>T<sub>C</sub> = Corporate tax rate</li>
+    </ul>
+    <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+    <h4>Rules:</h4>
+    <ul>
+      <li>
+        Use the market value, not the accounting value. Market values provide 
+        a more accurate snapshot of the current costs of capital than 
+        historical, book-based accounting value
+      </li>
+      <li>
+        Ensure each component represents funds currently used in operationsor 
+        earmarked for future investments, reflecting the actual sources of 
+        capital in the company's financing structure
+      </li>
+      <li>
+        Always calculate the debt factor
+        <span class="tooltip">after-tax
+          <span class="tooltip-text">
+            <p>
+              Just like mortgage interest, corporate loan interest is tax 
+              deductable.
+            </p>
+            <p>
+              For example, if a loan's interest rate is 8%, the after-tax 
+              cost is calculated as 8% * (1 - T<sub>C</sub>), where 
+              T<sub>C</sub> is the corporate tax rate.
+            </p>
+            <strong>Example Calculation:</strong>
+            <p>Interest rate = 8%
+              <br>Corporate Tax Rate is 25%
+              <br>E.g. 8% * (1 - 25%) = <strong>6%</strong>.
+            </p>
+          </span>
+        </span>.
+      </li>
+    </ul>
+    <p>
+      A simple example: if the WACC for an investment is, say 6%. Then that 
+      serves as the required return rate to maintain the company's value 
+      relative to its capital costs. If we plan to invest €1,000, then the 
+      cost of capital will be €60, calculated as follows: 1,000 * (1 + 0.06) 
+      = 1,060.
+    </p>
+    <p>
+      <em>Note: In this article, we'll simplify calculations 
+      to focus on when and how to use WACC. In practice, calculating WACC 
+      is more complex, often requiring financial experts who analyse 
+      various funding sources and their associated costs. We'll 
+      illustrate these principles with a fictional, publicly traded 
+      company, AB Bieren N.V.</em>
+    </p>
+  </section>
+  <section id="influences">
+    <h3>Know the Influences Impacting WACC</h3>
+    <p>
+      AB Bieren N.V. plans to open a new production line in Belgium to expand 
+      its capacity, with an estimated investment of 
+      <span id="investmentText">5 M</span>. Understanding the composition of 
+      its capital structure allows us to calculate a tailored WACC, factoring 
+      in both equity and debt costs.
+    </p>
+    <p>
+      For this project, AB Bieren N.V. plans to fund 
+      <span id="ev_weight">50</span>% (<span id="stockAmount">2.5 M</span>)
+      through issuing new stock and the remaining
+      <span id="dv_weight">50</span>%(<span id="loanAmount">2.5 M</span>) 
+      via a bank loan. New shareholders are promised a
+      <span id="costEq">15</span>% return, reflecting the higher risk 
+      typically associated with equity. On the debt side, the bank, which 
+      requires lower returns on secured loans, will charge a 
+      <span id="costDebt">4.5</span>%interest rate. The current Belgian 
+      corporate tax rate is 25%, which will affect the after-tax cost of debt 
+      in our WACC calculation.
+    </p>
+    <div class="wrapper">
       <div class="investment">
         <label for="investment"><b>Investment:</b></label>
         <input type="number" id="investment" value="5000000" step="200000">
@@ -180,252 +168,251 @@
         <label for="cost_debt"><b>Cost of Debt:</b></label>
         <input type="number" id="cost_debt" value="0.045" step="0.005">
       </div>
-      </div>
-      <p>
-        With a WACC of 
-        <span id="wacc_result">0</span>, 
-        the minimum return from the new production line must be 
-        <span id="min_return">0</span>.
-        <br>AB Bieren now needs to evaluate 
-        whether they can achieve this minimum return—and ideally exceed it 
-        to generate profit. Enter the Net Present Value (NPV). 
-      </p>
-      <p>
-        NPV will help AB Bieren determine if the project's returns justify 
-        the investment, using WACC as the discount rate. The company anticipates 
-        a 10-year service life for the production line, with an annual net 
-        cash inflow of 
-        <span id="gross_cash_flow">2,000,000</span> and costs of 
-        <span id="cost_cash_flow">1,250,000</span>, resulting in an annual 
-        Net Cash Flow of 
-        <span id="net_cash_flow">750,000</span>.
-      </p>
-      <p>
-        The NPV formula is as follows: 
-        $$\text{NPV} = \text{present value of expected returns}-\text{cost of investment}$$
-        The present value of expected returns is projected to be 
-        <span id="present_value">0</span>, leaving an NPV of 
-        <span id="npv">0</span>.
-      </p>
-      <p>
-        According to theory, AB Bieren should proceed with the investment if 
-        the NPV is positive or zero, as this indicates that the return meets 
-        or exceeds the WACC. However, a negative NPV suggests the investment 
-        may not achieve the required returns and could be reconsidered.
-      </p>
-      <p>
-        <em style="font-size: small;">Find a more detailed NPV formula 
-        <a href="https://en.wikipedia.org/wiki/Net_present_value" 
-           target="_blank" 
-           rel="noopener">here</a>.</em>
-      </p>
-    </section>
-    <section id="leveraging-debt">
-      <h3>Leveraging debt</h3>
-      <p>
-        Despite a negative NPV, AB Bieren is committed to launching the new 
-        production line, confident that the market demand justifies the 
-        investment. By revisiting their financing options, AB Bieren adjusts 
-        the capital structure to a 40-60 split: 40% from equity (investors) 
-        and 60% from debt. Try it yourself and notice how this change 
-        impacts the NPV.
-      </p>
-      <p>
-        Additionally, just on 17 october 2024, the European Central Bank (ECB) 
-        announced plans to 
-        <a href="https://www.ecb.europa.eu/press/pr/date/2024/html/ecb.mp241017~aa366eaf20.en.html#:~:text=ECB%20interest%20rates-,The%20Governing%20Council%20today%20decided%20to%20lower%20the%20three%20key,effect%20from%2023%20October%202024." target="_blank" rel="noopener">
-          lower the interest rates</a>,
-        giving AB Bieren leverage to renegotiate its loan rate down to 4%. 
-        With these adjustments, the NPV turns positive, reaching €78,277, 
-        allowing AB Bieren to green-light the project. This approach is 
-        known as “leveraging debt”—a strategy used to enhance returns by 
-        increasing debt financing when conditions are favourable. However, 
-        it's essential to manage debt levels carefully, as too much leverage 
-        introduces higher financial risk.
-      </p>
-      <p>
-        Notice how these changes also impact the WACC. This sensitivity to 
-        factors like capital structure and interest rates underscores the 
-        importance of WACC and its components. Getting WACC right is crucial 
-        for a company to make sound investment decisions. Yet, one final 
-        insight remains unseen in the WACC formula: the cost of capital 
-        hinges more on the <em>use</em> of funds than their source. For 
-        instance, capital allocated to high-growth projects may justify a 
-        higher WACC, while low-risk investments may require a lower threshold. 
-        This focus on <strong>purpose over origin</strong> highlights that 
-        strategic, effective use of capital is the true driver of sustainable 
-        returns and value creation.
-      </p>
-      <blockquote>
-        *<strong>CFOrent-tip</strong>*:
-        "<strong>A good practice</strong> is to make simulations of the WACC, 
-        where you incorporate various macro-economic factors that might 
-        influence the  WACC. This way, we can create a better risk-profile 
-        for the  investment." Says Anthony, CFOrent associate. "However, the 
-        WACC  cannot be the only metric to consider. In the end, a clear 
-        vision  statement determines what investments really matter for a 
-        company.  The metrics are merely tools to fine-tune the investment 
-        and to make an educated decission."
-      </blockquote>
-    </section>
-    <section id="balancing-equity-debt">
-      <h3>Balancing Shareholder Equity and Debt in WACC</h3>
-      <p>
-        In calculating the Weighted Average Cost of Capital (WACC), a company's 
-        capital structure—its mix of shareholder equity and debt—plays a 
-        critical role. Let's explore why companies use a combination of these 
-        financing sources, and how each affects the cost of capital.
-      </p>
-      <p>
-        Shareholder equity represents the ownership stake in a company. When a 
-        company raises capital by issuing shares, it gives investors a claim on 
-        future profits. In return, shareholders expect a certain rate of return, 
-        or cost of equity, which reflects the level of risk they're taking. The 
-        cost of equity tends to be higher than the cost of debt, as shareholders 
-        assume greater risk: unlike lenders, they are paid only after all debts 
-        are settled and receive returns based on performance.<br>While equity 
-        doesn't require fixed repayments like debt, it carries an implicit cost
-        —the returns shareholders expect for their investment. This expectation 
-        is part of the WACC formula, and it reflects the “price” a company pays 
-        to retain investor support and avoid diluting ownership.
-      </p>
-      <h4>Why Use Debt? The Power of Leverage</h4>
-      <p>
-        Debt, on the other hand, offers an alternative financing path. Unlike 
-        equity, debt requires regular interest payments but provides several 
-        advantages:
-        <ul>
-          <li>
-            Lower Cost: Debt generally has a lower cost than equity because 
-            lenders assume less risk. They have a contractual right to repayment, 
-            often backed by collateral, and are typically first in line during 
-            any liquidation process.
-          </li>
-          <li>
-            Tax Deductibility: Interest payments on debt are tax-deductible, 
-            reducing the company's overall tax burden. This tax advantage lowers 
-            the effective cost of debt in the WACC formula, making it an 
-            attractive option for many companies.
-          </li>
-          <li>
-            Controlled Ownership: Unlike issuing shares, debt does not dilute 
-            existing ownership, allowing current shareholders to maintain 
-            control over the company.
-          </li>
-        </ul>
-      </p>
-      <h4>The Balance Between Equity and Debt</h4>
-      <p>
-        Finding the right balance between shareholder equity and debt is key to 
-        managing WACC effectively. While debt can lower WACC due to its lower 
-        cost and tax benefits, excessive debt can increase financial risk, 
-        potentially affecting credit ratings, operational flexibility, and 
-        shareholder confidence. On the other hand, too much reliance on equity 
-        may increase WACC, as equity holders expect a higher return. In the WACC 
-        calculation, the cost of equity and cost of debt are weighted according 
-        to their proportion in the company's capital structure. By optimizing 
-        this balance, companies can achieve a lower WACC, making it easier to 
-        pursue growth opportunities with more favorable returns.
-      </p>
-    </section>
-    <section id="conclusion">
-      <h3>Conclusion</h3>
-      <p>
-        In understanding the Weighted Average Cost of Capital (WACC), we've seen 
-        that it is far more than a simple metric. WACC serves as a guiding 
-        compass for companies like AB Bieren N.V., helping them evaluate whether 
-        an investment will meet the necessary returns to satisfy both debt 
-        obligations and equity expectations. By breaking down WACC's components 
-        and experimenting with factors such as capital structure and interest 
-        rates, companies can make informed choices, optimising their financing 
-        approach to align with strategic goals.
-      </p>
-      <p>
-        But as we uncovered, calculating WACC isn't merely about numbers. It's 
-        about aligning the cost of capital with the intended purpose of the 
-        investment. Ultimately, WACC encourages businesses to use capital wisely 
-        and strategically, driving growth in ways that create sustainable value. 
-        With this tool, companies can approach each investment opportunity not 
-        just with financial prudence but with an eye toward the future—a future 
-        where every investment serves a purpose beyond profit alone.
-      </p>
-    </section>
-  </article>
-  <script>
-    function updateInvestmentDetails() {
-      const investment = parseFloat(document.getElementById("investment").value) || 0;
-      const evWeight = parseFloat(document.getElementById("ev_weight_input").value) || 0;
-      const costEquity = parseFloat(document.getElementById("cost_equity").value) || 0;
-      const costDebt = parseFloat(document.getElementById("cost_debt").value) || 0;
-      const dvWeight = 1 - evWeight;
-      
-      // Update text elements based on input values
-      document.getElementById("investmentText").innerText = (investment / 1_000_000).toFixed(1) + ' M';
-      document.getElementById("stockAmount").innerText = (investment * evWeight / 1_000_000).toFixed(1) + ' M';
-      document.getElementById("loanAmount").innerText = (investment * dvWeight / 1_000_000).toFixed(1) + ' M';
-      document.getElementById("ev_weight").innerText = (evWeight * 100).toFixed(0);
-      document.getElementById("dv_weight").innerText = (dvWeight * 100).toFixed(0);
-      document.getElementById("costEq").innerText = (costEquity * 100).toFixed(0);
-      document.getElementById("costDebt").innerText = (costDebt * 100).toFixed(1);
+    </div>
+    <p>
+      With a WACC of 
+      <span id="wacc_result">0</span>, 
+      the minimum return from the new production line must be 
+      <span id="min_return">0</span>.
+      <br>AB Bieren now needs to evaluate 
+      whether they can achieve this minimum return—and ideally exceed it 
+      to generate profit. Enter the Net Present Value (NPV). 
+    </p>
+    <p>
+      NPV will help AB Bieren determine if the project's returns justify 
+      the investment, using WACC as the discount rate. The company anticipates 
+      a 10-year service life for the production line, with an annual net 
+      cash inflow of 
+      <span id="gross_cash_flow">2,000,000</span> and costs of 
+      <span id="cost_cash_flow">1,250,000</span>, resulting in an annual 
+      Net Cash Flow of 
+      <span id="net_cash_flow">750,000</span>.
+    </p>
+    <p>
+      The NPV formula is as follows:
+      <div class="latex">$$\text{NPV} = \text{present value of expected returns}-\text{cost of investment}$$</div>
+      The present value of expected returns is projected to be 
+      <span id="present_value">0</span>, leaving an NPV of 
+      <span id="npv">0</span>.
+    </p>
+    <p>
+      According to theory, AB Bieren should proceed with the investment if 
+      the NPV is positive or zero, as this indicates that the return meets 
+      or exceeds the WACC. However, a negative NPV suggests the investment 
+      may not achieve the required returns and could be reconsidered.
+    </p>
+    <p>
+      <em style="font-size: small;">Find a more detailed NPV formula 
+      <a href="https://en.wikipedia.org/wiki/Net_present_value" 
+          target="_blank" 
+          rel="noopener">here</a>.</em>
+    </p>
+  </section>
+  <section id="leveraging-debt">
+    <h3>Leveraging debt</h3>
+    <p>
+      Despite a negative NPV, AB Bieren is committed to launching the new 
+      production line, confident that the market demand justifies the 
+      investment. By revisiting their financing options, AB Bieren adjusts 
+      the capital structure to a 40-60 split: 40% from equity (investors) 
+      and 60% from debt. Try it yourself and notice how this change 
+      impacts the NPV.
+    </p>
+    <p>
+      Additionally, just on 17 october 2024, the European Central Bank (ECB) 
+      announced plans to 
+      <a href="https://www.ecb.europa.eu/press/pr/date/2024/html/ecb.mp241017~aa366eaf20.en.html#:~:text=ECB%20interest%20rates-,The%20Governing%20Council%20today%20decided%20to%20lower%20the%20three%20key,effect%20from%2023%20October%202024." target="_blank" rel="noopener">
+        lower the interest rates</a>,
+      giving AB Bieren leverage to renegotiate its loan rate down to 4%. 
+      With these adjustments, the NPV turns positive, reaching €78,277, 
+      allowing AB Bieren to green-light the project. This approach is 
+      known as “leveraging debt”—a strategy used to enhance returns by 
+      increasing debt financing when conditions are favourable. However, 
+      it's essential to manage debt levels carefully, as too much leverage 
+      introduces higher financial risk.
+    </p>
+    <p>
+      Notice how these changes also impact the WACC. This sensitivity to 
+      factors like capital structure and interest rates underscores the 
+      importance of WACC and its components. Getting WACC right is crucial 
+      for a company to make sound investment decisions. Yet, one final 
+      insight remains unseen in the WACC formula: the cost of capital 
+      hinges more on the <em>use</em> of funds than their source. For 
+      instance, capital allocated to high-growth projects may justify a 
+      higher WACC, while low-risk investments may require a lower threshold. 
+      This focus on <strong>purpose over origin</strong> highlights that 
+      strategic, effective use of capital is the true driver of sustainable 
+      returns and value creation.
+    </p>
+    <blockquote>
+      *<strong>CFOrent-tip</strong>*:
+      "<strong>A good practice</strong> is to make simulations of the WACC, 
+      where you incorporate various macro-economic factors that might 
+      influence the  WACC. This way, we can create a better risk-profile 
+      for the  investment." Says Anthony, CFOrent associate. "However, the 
+      WACC  cannot be the only metric to consider. In the end, a clear 
+      vision  statement determines what investments really matter for a 
+      company.  The metrics are merely tools to fine-tune the investment 
+      and to make an educated decission."
+    </blockquote>
+  </section>
+  <section id="balancing-equity-debt">
+    <h3>Balancing Shareholder Equity and Debt in WACC</h3>
+    <p>
+      In calculating the Weighted Average Cost of Capital (WACC), a company's 
+      capital structure—its mix of shareholder equity and debt—plays a 
+      critical role. Let's explore why companies use a combination of these 
+      financing sources, and how each affects the cost of capital.
+    </p>
+    <p>
+      Shareholder equity represents the ownership stake in a company. When a 
+      company raises capital by issuing shares, it gives investors a claim on 
+      future profits. In return, shareholders expect a certain rate of return, 
+      or cost of equity, which reflects the level of risk they're taking. The 
+      cost of equity tends to be higher than the cost of debt, as shareholders 
+      assume greater risk: unlike lenders, they are paid only after all debts 
+      are settled and receive returns based on performance.<br>While equity 
+      doesn't require fixed repayments like debt, it carries an implicit cost
+      —the returns shareholders expect for their investment. This expectation 
+      is part of the WACC formula, and it reflects the “price” a company pays 
+      to retain investor support and avoid diluting ownership.
+    </p>
+    <h4>Why Use Debt? The Power of Leverage</h4>
+    <p>
+      Debt, on the other hand, offers an alternative financing path. Unlike 
+      equity, debt requires regular interest payments but provides several 
+      advantages:
+      <ul>
+        <li>
+          Lower Cost: Debt generally has a lower cost than equity because 
+          lenders assume less risk. They have a contractual right to repayment, 
+          often backed by collateral, and are typically first in line during 
+          any liquidation process.
+        </li>
+        <li>
+          Tax Deductibility: Interest payments on debt are tax-deductible, 
+          reducing the company's overall tax burden. This tax advantage lowers 
+          the effective cost of debt in the WACC formula, making it an 
+          attractive option for many companies.
+        </li>
+        <li>
+          Controlled Ownership: Unlike issuing shares, debt does not dilute 
+          existing ownership, allowing current shareholders to maintain 
+          control over the company.
+        </li>
+      </ul>
+    </p>
+    <h4>The Balance Between Equity and Debt</h4>
+    <p>
+      Finding the right balance between shareholder equity and debt is key to 
+      managing WACC effectively. While debt can lower WACC due to its lower 
+      cost and tax benefits, excessive debt can increase financial risk, 
+      potentially affecting credit ratings, operational flexibility, and 
+      shareholder confidence. On the other hand, too much reliance on equity 
+      may increase WACC, as equity holders expect a higher return. In the WACC 
+      calculation, the cost of equity and cost of debt are weighted according 
+      to their proportion in the company's capital structure. By optimizing 
+      this balance, companies can achieve a lower WACC, making it easier to 
+      pursue growth opportunities with more favorable returns.
+    </p>
+  </section>
+  <section id="conclusion">
+    <h3>Conclusion</h3>
+    <p>
+      In understanding the Weighted Average Cost of Capital (WACC), we've seen 
+      that it is far more than a simple metric. WACC serves as a guiding 
+      compass for companies like AB Bieren N.V., helping them evaluate whether 
+      an investment will meet the necessary returns to satisfy both debt 
+      obligations and equity expectations. By breaking down WACC's components 
+      and experimenting with factors such as capital structure and interest 
+      rates, companies can make informed choices, optimising their financing 
+      approach to align with strategic goals.
+    </p>
+    <p>
+      But as we uncovered, calculating WACC isn't merely about numbers. It's 
+      about aligning the cost of capital with the intended purpose of the 
+      investment. Ultimately, WACC encourages businesses to use capital wisely 
+      and strategically, driving growth in ways that create sustainable value. 
+      With this tool, companies can approach each investment opportunity not 
+      just with financial prudence but with an eye toward the future—a future 
+      where every investment serves a purpose beyond profit alone.
+    </p>
+  </section>
+</article>
+<script>
+  function updateInvestmentDetails() {
+    const investment = parseFloat(document.getElementById("investment").value) || 0;
+    const evWeight = parseFloat(document.getElementById("ev_weight_input").value) || 0;
+    const costEquity = parseFloat(document.getElementById("cost_equity").value) || 0;
+    const costDebt = parseFloat(document.getElementById("cost_debt").value) || 0;
+    const dvWeight = 1 - evWeight;
+    
+    // Update text elements based on input values
+    document.getElementById("investmentText").innerText = (investment / 1_000_000).toFixed(1) + ' M';
+    document.getElementById("stockAmount").innerText = (investment * evWeight / 1_000_000).toFixed(1) + ' M';
+    document.getElementById("loanAmount").innerText = (investment * dvWeight / 1_000_000).toFixed(1) + ' M';
+    document.getElementById("ev_weight").innerText = (evWeight * 100).toFixed(0);
+    document.getElementById("dv_weight").innerText = (dvWeight * 100).toFixed(0);
+    document.getElementById("costEq").innerText = (costEquity * 100).toFixed(0);
+    document.getElementById("costDebt").innerText = (costDebt * 100).toFixed(1);
 
-      // Calculate WACC, minimum return, and present value
-      const wacc = (evWeight * costEquity) + (dvWeight * costDebt * (1 - 0.25));
-      const minReturn = investment * (1 + wacc) / 1_000_000;
+    // Calculate WACC, minimum return, and present value
+    const wacc = (evWeight * costEquity) + (dvWeight * costDebt * (1 - 0.25));
+    const minReturn = investment * (1 + wacc) / 1_000_000;
 
-      // Display WACC and minimum return, 
-      document.getElementById("wacc_result").textContent = (wacc * 100).toFixed(2) + "%";
-      document.getElementById("min_return").textContent = minReturn.toFixed(2) + " M";
-  
-      // Calculate gross_cash_flow, cost_cash_flow, net_cash_flow and present value
-      const grossCashFlow = investment * 0.4;
-      const costCashFlow = grossCashFlow * 0.625;
-      const netCashFlow = grossCashFlow - costCashFlow;
-      const discount = (1+wacc)**10;
-      const presentValue =  (netCashFlow * (1-(1/discount))/wacc);
-      const npv = presentValue - investment;
+    // Display WACC and minimum return, 
+    document.getElementById("wacc_result").textContent = (wacc * 100).toFixed(2) + "%";
+    document.getElementById("min_return").textContent = minReturn.toFixed(2) + " M";
 
-      // Display cash flow values
-      document.getElementById("gross_cash_flow").textContent = (grossCashFlow / 1_000_000).toFixed(2) + " M";
-      document.getElementById("cost_cash_flow").textContent = (costCashFlow / 1_000_000).toFixed(2) + " M";
-      document.getElementById("net_cash_flow").textContent = (netCashFlow / 1_000_000).toFixed(2) + " M";
-      document.getElementById("present_value").textContent = (presentValue/ 1_000_000).toFixed(2) + " M";
-      document.getElementById("npv").textContent = npv.toFixed(0).toLocaleString();
-    }
-    // Attach event listeners to update on input changes
-    ["investment", "ev_weight_input", "cost_equity", "cost_debt"].forEach(id => {
-        document.getElementById(id).addEventListener("input", updateInvestmentDetails);
-    });
+    // Calculate gross_cash_flow, cost_cash_flow, net_cash_flow and present value
+    const grossCashFlow = investment * 0.4;
+    const costCashFlow = grossCashFlow * 0.625;
+    const netCashFlow = grossCashFlow - costCashFlow;
+    const discount = (1+wacc)**10;
+    const presentValue =  (netCashFlow * (1-(1/discount))/wacc);
+    const npv = presentValue - investment;
 
-    // Initial calculation with default values
-    updateInvestmentDetails();
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const tooltips = document.querySelectorAll('.tooltip'); 
-    tooltips.forEach(tooltip => {
-      tooltip.addEventListener('click', function() {
-        // Close any open tooltips
-        tooltips.forEach(tip => {
-          if (tip !== this) {tip.classList.remove('show');
+    // Display cash flow values
+    document.getElementById("gross_cash_flow").textContent = (grossCashFlow / 1_000_000).toFixed(2) + " M";
+    document.getElementById("cost_cash_flow").textContent = (costCashFlow / 1_000_000).toFixed(2) + " M";
+    document.getElementById("net_cash_flow").textContent = (netCashFlow / 1_000_000).toFixed(2) + " M";
+    document.getElementById("present_value").textContent = (presentValue/ 1_000_000).toFixed(2) + " M";
+    document.getElementById("npv").textContent = npv.toFixed(0).toLocaleString();
+  }
+  // Attach event listeners to update on input changes
+  ["investment", "ev_weight_input", "cost_equity", "cost_debt"].forEach(id => {
+      document.getElementById(id).addEventListener("input", updateInvestmentDetails);
+  });
 
-          }
-        });
-        // Toggle the current tooltip
-        this.classList.toggle('show');
-      });
-    });
+  // Initial calculation with default values
+  updateInvestmentDetails();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tooltips = document.querySelectorAll('.tooltip'); 
+  tooltips.forEach(tooltip => {
+    tooltip.addEventListener('click', function() {
+      // Close any open tooltips
+      tooltips.forEach(tip => {
+        if (tip !== this) {tip.classList.remove('show');
 
-    // Close tooltip when clicking outside
-    document.addEventListener('click', function(e) {
-      tooltips.forEach(tooltip => {
-        if (!tooltip.contains(e.target)) {
-          tooltip.classList.remove('show');
         }
       });
+      // Toggle the current tooltip
+      this.classList.toggle('show');
     });
   });
-  </script>
-</body>
+
+  // Close tooltip when clicking outside
+  document.addEventListener('click', function(e) {
+    tooltips.forEach(tooltip => {
+      if (!tooltip.contains(e.target)) {
+        tooltip.classList.remove('show');
+      }
+    });
+  });
+});
+</script>
 <style>
 .tooltip {
   position: relative;
@@ -476,7 +463,11 @@ blockquote {
   color: #333;
   border-radius: 5px;
 }
-
+.latex {
+    font-size: 0.85em;
+    overflow:auto; 
+    max-width: 100%;
+}
 /* Calculator */
 .wrapper {
   display: grid;
